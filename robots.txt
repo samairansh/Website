@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.samairansh.com/sitemap.xml
