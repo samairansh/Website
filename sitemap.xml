@@ -1,2 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://www.samairansh.com/</loc></url><url><loc>https://www.samairansh.com/service.html</loc></url><url><loc>https://www.samairansh.com/feature.html</loc></url><url><loc>https://www.samairansh.com/blog.html</loc></url><url><loc>https://www.samairansh.com/contact.html</loc></url><url><loc>https://www.samairansh.com/quote.html</loc></url><url><loc>https://www.samairansh.com/testimonial.html</loc></url><url><loc>https://www.samairansh.com/detail.html</loc></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.samairansh.com/</loc></url>
+  <url><loc>https://www.samairansh.com/service.html</loc></url>
+  <url><loc>https://www.samairansh.com/feature.html</loc></url>
+  <url><loc>https://www.samairansh.com/blog.html</loc></url>
+  <url><loc>https://www.samairansh.com/detail.html</loc></url>
+  <url><loc>https://www.samairansh.com/contact.html</loc></url>
+  <url><loc>https://www.samairansh.com/quote.html</loc></url>
+  <url><loc>https://www.samairansh.com/testimonial.html</loc></url>
+</urlset>
