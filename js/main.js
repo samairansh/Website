@@ -1,1 +1,5 @@
-document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('a[href="#"]').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));const nav=document.querySelector('.navbar');if(nav){window.addEventListener('scroll',()=>nav.classList.toggle('shadow-sm',window.scrollY>10),{passive:true});}const form=document.querySelector('form[action="send_email.php"]');if(form){form.addEventListener('submit',async e=>{e.preventDefault();const btn=form.querySelector('button[type="submit"],button:not([type])');const old=btn?.innerHTML;if(btn){btn.disabled=true;btn.innerHTML='Sending…';}try{const r=await fetch(form.action,{method:'POST',body:new FormData(form)});const data=await r.json();alert(data.message||'Thank you. We will be in touch.');if(data.status==='success')form.reset();}catch(err){form.submit();}finally{if(btn){btn.disabled=false;btn.innerHTML=old;}}});}});
+document.addEventListener('DOMContentLoaded',()=>{
+  const toggle=document.querySelector('.mobile-toggle'); const nav=document.querySelector('.navlinks');
+  if(toggle&&nav){toggle.addEventListener('click',()=>nav.classList.toggle('open'));}
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const el=document.querySelector(a.getAttribute('href'));if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}}));
+});
