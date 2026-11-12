@@ -1,21 +1,23 @@
 # SAMAIRANSH website
 
-GitHub Pages-ready static website for SAMAIRANSH IT Consultancy.
+Static site (plain HTML/CSS/JS, no build step) for SAMAIRANSH IT Consultancy.
+Works on GitHub Pages and on Cloudflare Pages.
 
-## Brand/contact details
-- Brand: SAMAIRANSH
-- Office: 71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ
-- Email: samairansh@gmail.com
-- Phone: 7880228669
-- Domain: https://www.samairansh.com/
+## Edit
+- Pages: `index.html`, `service.html`, `feature.html`, `blog.html`, `detail.html`, `contact.html`, `quote.html`, `privacy.html`
+- Styles: `css/style.css` (colours and fonts are variables at the top, with automatic dark mode)
+- Behaviour: `js/main.js` (menu, scroll reveal, contact forms)
+- Domain used in canonical links, sitemap and social cards: `https://www.samairansh.com` (search the repo and replace if it changes)
 
-## GitHub Pages + IONOS
-1. Push the contents of this folder to the repository root.
-2. In GitHub: Settings → Pages → Deploy from branch → main → / (root) → Save.
-3. The included `CNAME` file uses `www.samairansh.com`.
-4. In IONOS DNS, point `www` to `samairansh.github.io` using a CNAME record (replace `samairansh` with your exact GitHub username if different).
-5. For the apex `samairansh.com`, use GitHub Pages' current A-record values shown in GitHub Pages settings, then enable HTTPS after DNS resolves.
-6. In GitHub Pages settings, enable **Enforce HTTPS**.
+## Cloudflare Pages (free)
+1. Cloudflare dashboard > Workers & Pages > Create > Pages > Connect to Git > this repo, branch `main`.
+2. Build command: none. Output directory: `/` (root).
+3. Add the custom domain in the Pages project. Cloudflare then manages DNS (move nameservers from IONOS).
+4. `_headers` (security + caching) and `_redirects` are picked up automatically.
 
-## Forms
-The contact forms use `mailto:` so they can work on static hosting without PHP. If you want server-side submissions, connect the forms to a service such as Formspree or host the PHP form on IONOS instead.
+## Contact form (free)
+`functions/api/contact.js` receives the forms on Cloudflare Pages. Set these in Pages > Settings > Variables and Secrets:
+- `RESEND_API_KEY` (secret), `CONTACT_TO`, `CONTACT_FROM` (a sender on a domain verified in Resend)
+- `TURNSTILE_SECRET` (secret) and put the public site key in `TURNSTILE_SITE_KEY` at the top of `js/main.js`
+
+Until those are set (or while hosted on GitHub Pages), the forms open the visitor's email app addressed to the site email.
